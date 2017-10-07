@@ -1,10 +1,15 @@
 import {createStore, applyMiddleware} from 'redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
+import {createEpicMiddleware} from 'redux-observable';
 
 import reduxApp from './reducers';
+import {rootEpic} from './epics';
 
 const configureStore = () => {
-  const middlewares = [];
+  const epicMiddleware = createEpicMiddleware(rootEpic);
+  const middlewares = [
+    epicMiddleware
+  ];
   
   const store = createStore(
     reduxApp,

@@ -1,0 +1,2 @@
+export const LOAD_STORIES = 'LOAD_STORIES';
+export const CLEAR_STORIES = 'CLEAR_STORIES';

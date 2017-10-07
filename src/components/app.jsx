@@ -1,8 +1,9 @@
 import React from 'react';
+import Stories from './stories';
 
 const App = () => (
   <div>
-    <h1>App</h1>
+    <Stories />
   </div>
 );
 
