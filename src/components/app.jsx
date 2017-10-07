@@ -8,11 +8,11 @@ import {searchBeers} from '../actions';
 class App extends Component {
   render() {
     return (
-      <div>
+      <div style={{display: 'flex'}}>
         <Search 
           defaultValue={''}
           onChange={this._handleBeerSearch} />
-          <Beers beers={this.props.beers} loading={this.props.loading} />
+        <Beers beers={this.props.beers} loading={this.props.loading} />
       </div>
     );
   }
