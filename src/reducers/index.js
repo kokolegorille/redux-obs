@@ -1,28 +1,22 @@
 import * as types from '../actions/action_types';
 
-const stories = [
-  {
-    "id" : 1,
-    "title" : "Yo"
-  },
-  {
-    "id" : 2,
-    "title" : "Yi"
-  }
-];
-
 const initialState = {
-  items: []
+  beers: [],
+  loading: false
 }
 
 const reduxApp = (state = initialState, action) => {
   switch(action.type) {
-    case types.LOAD_STORIES:
+    case types.SEARCHED_BEERS:
       return {
-        items: stories.slice()
+        ...state,
+        loading: true
       }
-    case types.CLEAR_STORIES:
-      return initialState;
+    case types.RECEIVED_BEERS:
+      return {
+        beers: action.payload,
+        loading: false
+      };
   
     default: return state
   }
